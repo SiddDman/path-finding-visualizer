@@ -23,3 +23,8 @@ export type GridType = TileType[][];
 
 //2=fast, 1=medium, 0.5 = slow 
 export type SpeedType = 2 | 1 | 0.5;
+
+export interface SpeedSelectType {
+    name: string;
+    value: SpeedType;
+}

@@ -5,11 +5,14 @@ import { MAZES } from "../utils/constants"
 import resetGrid from "../utils/resetGrid"
 import { MazeType } from "../utils/types"
 import Select from "./Select"
+import runMazeAlgo from "../utils/runMazeAlgo"
+import useSpeed from "../hooks/useSpeed"
 
 const Nav = () => {
     const [isDisabled, setIsDisabled] = useState(false)
-    const { maze, setMaze, grid } = usePathFinding()
+    const { maze, setMaze, grid, setGrid, setIsGraphVisualized } = usePathFinding()
     const { startTile, endTile } = useTile()
+    const { speed } = useSpeed()
 
     const handleGenerateMaze = (maze: MazeType) => {
         if (maze === 'NONE') {
@@ -20,6 +23,18 @@ const Nav = () => {
         setMaze(maze)
         setIsDisabled(true)
         //run maze Algo
+        runMazeAlgo({
+            maze,
+            grid,
+            startTile,
+            endTile,
+            setIsDisabled,
+            speed
+        })
+
+        const newGrid = grid.slice();//creating shallow copy of the grid
+        setGrid(newGrid)
+        setIsGraphVisualized(false)
     }
     return (
         <div className="flex items-center justify-center min-h-[4.5rem] border-b shadow-gray-600 sm:px-5 px-0">
@@ -32,7 +47,7 @@ const Nav = () => {
                         label='Maze'
                         value={maze}
                         options={MAZES}
-                        isDisabled={true}
+                        isDisabled={isDisabled}
                         onChange={(e) => {
                             //handle generating maze
                             handleGenerateMaze(e.target.value as MazeType);
