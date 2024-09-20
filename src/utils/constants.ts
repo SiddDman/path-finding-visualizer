@@ -28,7 +28,7 @@ export const END_TILE_CONFIG = {
     parent: null
 }
 
-export const TILE_STYLE = "lg w-[17px] md:w-[15px] xs:w-[8px] w-[7px] lg h-[17px] md:h-[15px] xs:h-[8px]  h-[7px] border border-t border-r border-sky-200"
+export const TILE_STYLE = "lg:w-[17px] md:w-[15px] xs:w-[8px] w-[7px] lg:h-[17px] md:h-[15px] xs:h-[8px] h-[7px] border border-t border-r border-sky-200"
 
 export const TRAVERSED_TILE_STYLE = TILE_STYLE + " bg-cyan-400"
 export const START_TILE_STYLE = TILE_STYLE + " bg-green-400"
@@ -39,11 +39,13 @@ export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-500"
 export const MAZES: MazeSelectType[] = [
     { name: "No Maze", value: "None" },
     { name: "Binary Tree", value: "BINARY_TREE" },
-    { name: "Recursive Division", value: "RECURSIVE_DIVISIOn" },
+    { name: "Recursive Division", value: "RECURSIVE_DIVISION" },
 ]
 
-export const SPEEDS:SpeedSelectType[]=[
-    {name:"Slow",value:2},
-    {name:"Medium",value:1},
-    {name:"Fast",value:0.5},
+export const SPEEDS: SpeedSelectType[] = [
+    { name: "Slow", value: 2 },
+    { name: "Medium", value: 1 },
+    { name: "Fast", value: 0.5 },
 ]
+
+export const SLEEP_TIME = 8;

@@ -2,14 +2,15 @@ import { END_TILE_CONFIG, MAX_COLS, MAX_ROWS, START_TILE_CONFIG, TILE_STYLE } fr
 import { isEqual } from "./helpers";
 import { GridType, TileType } from "./types"
 
-const resetGrid = (
-    { grid,
-        startTile = START_TILE_CONFIG,
-        endTile = END_TILE_CONFIG }: {
-            grid: GridType;
-            startTile?: TileType;
-            endTile?: TileType;
-        }
+const resetGrid = ({
+    grid,
+    startTile = START_TILE_CONFIG,
+    endTile = END_TILE_CONFIG
+}: {
+    grid: GridType;
+    startTile?: TileType;
+    endTile?: TileType;
+}
 ) => {
     for (let row = 0; row < MAX_ROWS; row++)
         for (let col = 0; col < MAX_COLS; col++) {
