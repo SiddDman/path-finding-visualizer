@@ -30,7 +30,6 @@ const Select = ({
                     </option>
                 ))}
             </select>
-
         </div>
     )
 }
