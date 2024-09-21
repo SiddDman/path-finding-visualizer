@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { MutableRefObject, useState } from "react"
 import usePathFinding from "../hooks/usePathFinding"
 import useTile from "../hooks/useTile"
-import { MAZES, PATH_FINDING_ALGO } from "../utils/constants"
+import { EXTENDED_SLEEP_TIME, MAZES, PATH_FINDING_ALGO, SLEEP_TIME, SPEEDS } from "../utils/constants"
 import resetGrid from "../utils/resetGrid"
 import { AlgoType, MazeType } from "../utils/types"
 import Select from "./Select"
@@ -9,8 +9,13 @@ import runMazeAlgo from "../utils/runMazeAlgo"
 import useSpeed from "../hooks/useSpeed"
 import PlayButton from "./PlayButton"
 import runPathFindingAlgo from "../utils/runPathFindingAlgo"
+import animatePath from "../utils/animatePath"
 
-const Nav = () => {
+const Nav = ({
+    isVisualizationRunningRef
+}: {
+    isVisualizationRunningRef: MutableRefObject<boolean>
+}) => {
     const [isDisabled, setIsDisabled] = useState(false)
     const { maze, setMaze, grid, setGrid, setIsGraphVisualized, isGraphVisualized, algo, setAlgo } = usePathFinding()
     const { startTile, endTile } = useTile()
@@ -48,10 +53,15 @@ const Nav = () => {
         //run the path finding algo
         const { traversedTiles, path } = runPathFindingAlgo({ algo, grid, startTile, endTile })
 
-        console.log('traversedTiles', traversedTiles)
-        console.log('path', path)
-
-
+        animatePath(traversedTiles, path, startTile, endTile, speed)
+        setIsDisabled(true)
+        isVisualizationRunningRef.current = true
+        setTimeout(() => {
+            const newGrid = grid.slice()
+            setGrid(newGrid)
+            setIsGraphVisualized(true)
+            isVisualizationRunningRef.current = false
+        }, (SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) * SPEEDS.find((s) => s.value === speed)!.value))
     }
 
     return (

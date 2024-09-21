@@ -5,7 +5,9 @@ import Tile from "./Tile";
 import { MutableRefObject, useState } from "react";
 import { checkIfStartOrEnd, createNewGrid } from "../utils/helpers";
 
-const Grid = ({ isVisualizationRunningRef }: {
+const Grid = ({
+    isVisualizationRunningRef
+}: {
     isVisualizationRunningRef: MutableRefObject<boolean>
 }) => {
     const { grid, setGrid } = usePathFinding();
