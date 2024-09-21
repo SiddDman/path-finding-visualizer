@@ -1,7 +1,6 @@
 import { WALL_TILE_STYLE, SPEEDS } from "../../../utils/constants";
 import { getRandInt, isEqual, sleep } from "../../../utils/helpers";
-import { GridType, TileType } from "../../../utils/types";
-// import { GridType, SpeedType, TileType } from "../../../utils/types";
+import { GridType, SpeedType, TileType } from "../../../utils/types";
 import recursiveDivision from "./recursiveDivision";
 
 const verticalDivision = async ({
@@ -23,8 +22,8 @@ const verticalDivision = async ({
     height: number;
     width: number;
     setIsDisabled: (isDisabled: boolean) => void;
-    // speed: SpeedType;
-    speed: number;
+    speed: SpeedType;
+    // speed: number;
 }) => {
     const makeWallAt = col + getRandInt(0, width - 1) * 2 + 1
     const makePassageAt = row + getRandInt(0, height) * 2

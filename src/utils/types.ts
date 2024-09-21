@@ -1,5 +1,10 @@
 export type AlgoType = "DIJIKSTRA" | "A_STAR" | "BFS" | "DFS";
 
+export interface AlgoSelectType {
+    name: string;
+    value: AlgoType;
+}
+
 export type MazeType = "NONE" | "BINARY_TREE" | "RECURSIVE_DIVISION"
 
 export type MazeSelectType = {

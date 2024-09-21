@@ -1,7 +1,6 @@
 import { SPEEDS, WALL_TILE_STYLE } from "../../../utils/constants";
 import { getRandInt, isEqual, sleep } from "../../../utils/helpers";
-import { GridType, TileType } from "../../../utils/types";
-// import { GridType, SpeedType, TileType } from "../../../utils/types";
+import { GridType, SpeedType, TileType } from "../../../utils/types";
 import recursiveDivision from "./recursiveDivision";
 
 const horizontalDivision = async ({
@@ -23,8 +22,8 @@ const horizontalDivision = async ({
     height: number;
     width: number;
     setIsDisabled: (isDisabled: boolean) => void;
-    // speed: SpeedType;
-    speed: number;
+    speed: SpeedType;
+    // speed: number;
 }) => {
     const makeWallAt = row + getRandInt(0, height - 1) * 2 + 1
     const makePassageAt = col + getRandInt(0, width) * 2
@@ -32,7 +31,7 @@ const horizontalDivision = async ({
     for (let i = 0; i < 2 * width - 1; i++)
         if (makePassageAt !== col + i)
             if (!isEqual(grid[makeWallAt][col + i], startTile) && !isEqual(grid[makeWallAt][col + i], endTile)) {
-                
+
                 grid[makeWallAt][col + i].isWall = true
                 document.getElementById(`${makeWallAt}-${col + i}`)!.className = `${WALL_TILE_STYLE} animate-wall`
 
