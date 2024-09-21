@@ -19,7 +19,7 @@ const Select = ({
             <label className="text-xs text-gray-300 ml-1">
                 {label}
             </label>
-            <select disabled={isDisabled} className="bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-800 transition ease-in active:border-0 p-2 min-w-[200px] sm:min-w-full"
+            <select disabled={isDisabled} className="bg-gray-700 rounded-md cursor-pointer hover:bg-gray-800 transition ease-in active:border-0 p-2 min-w-[200px] sm:min-w-full"
                 id={label}
                 value={value}
                 onChange={onChange}
