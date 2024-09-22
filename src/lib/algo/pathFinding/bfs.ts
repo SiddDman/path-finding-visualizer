@@ -1,6 +1,6 @@
 import getUntraversedNeighbours from "../../../utils/getUntraversedNeighbours";
-import { isEqual } from "../../../utils/helpers";
-import isInQueue from "../../../utils/isInQueue";
+import { isEqual, isInQueue } from "../../../utils/helpers";
+
 import { GridType, TileType } from "../../../utils/types"
 
 const bfs = (

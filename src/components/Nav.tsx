@@ -60,6 +60,7 @@ const Nav = ({
             const newGrid = grid.slice()
             setGrid(newGrid)
             setIsGraphVisualized(true)
+            setIsDisabled(false)
             isVisualizationRunningRef.current = false
         }, (SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) * SPEEDS.find((s) => s.value === speed)!.value))
     }
@@ -103,9 +104,9 @@ const Nav = ({
                         isDisabled={isDisabled}
                     />
                     <PlayButton
-                        isDisabled={isDisabled}
                         isGraphVisualized={isGraphVisualized}
                         handleRunVisualizer={handleRunVisualizer}
+                        isDisabled={isDisabled}
                     />
                 </div>
             </div>

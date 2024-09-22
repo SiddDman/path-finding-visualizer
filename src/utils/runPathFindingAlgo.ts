@@ -1,4 +1,6 @@
 import bfs from "../lib/algo/pathFinding/bfs";
+import dfs from "../lib/algo/pathFinding/dfs";
+import dijkstra from "../lib/algo/pathFinding/dijkstra";
 import { AlgoType, GridType, TileType } from "./types";
 
 const runPathFindingAlgo = ({
@@ -15,10 +17,10 @@ const runPathFindingAlgo = ({
     switch (algo) {
         case "BFS":
             return bfs(grid, startTile, endTile);
-        // case "DFS":
-        //     return;
-        // case "DIJIKSTRA":
-        //     return;
+        case "DFS":
+            return dfs(grid, startTile, endTile);
+        case "DIJIKSTRA":
+            return dijkstra(grid, startTile, endTile);
         // case "A_STAR":
         //     return;
         default:

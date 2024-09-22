@@ -11,7 +11,7 @@ const Select = ({
     label: string;
     onChange: (value: ChangeEvent<HTMLSelectElement>) => void
     options: { value: string | number; name: string }[];
-    isDisabled: boolean;
+    isDisabled?: boolean;
 
 }) => {
     return (
