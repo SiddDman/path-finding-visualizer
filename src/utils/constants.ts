@@ -33,7 +33,7 @@ export const TILE_STYLE = "lg:w-[17px] md:w-[15px] xs:w-[8px] w-[7px] lg:h-[17px
 export const TRAVERSED_TILE_STYLE = TILE_STYLE + " bg-cyan-400"
 export const START_TILE_STYLE = TILE_STYLE + " bg-green-400"
 export const END_TILE_STYLE = TILE_STYLE + " bg-red-400"
-export const WALL_TILE_STYLE = TILE_STYLE + " bg-gray-400"
+export const WALL_TILE_STYLE = TILE_STYLE + " bg-gray-100"
 export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-500"
 
 export const MAZES: MazeSelectType[] = [
@@ -44,7 +44,7 @@ export const MAZES: MazeSelectType[] = [
 
 export const PATH_FINDING_ALGO: AlgoSelectType[] = [
     { name: "Dijkstra", value: "DIJIKSTRA" },
-    { name: "A_STAR", value: "A_STAR" },
+    { name: "A STAR", value: "A_STAR" },
     { name: "Breadth First Search", value: "BFS" },
     { name: "Depth First Search", value: "DFS" },
 ]
