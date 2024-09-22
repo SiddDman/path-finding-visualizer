@@ -50,12 +50,13 @@ const a_star = (
         }
     }
     const path = []
-    let curr = endTile
+    let curr = grid[endTile.row][endTile.col]
     while (curr !== null) {
         curr.isPath = true
         path.unshift(curr)
         curr = curr.parent!
     }
+    console.log(path)
     return { traversedTiles, path }
 
 }

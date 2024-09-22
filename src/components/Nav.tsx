@@ -62,7 +62,7 @@ const Nav = ({
             setIsGraphVisualized(true)
             setIsDisabled(false)
             isVisualizationRunningRef.current = false
-        }, (SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) * SPEEDS.find((s) => s.value === speed)!.value))
+        }, (SLEEP_TIME * (traversedTiles.length / 2 + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) + SPEEDS.find((s) => s.value === speed)!.value))
     }
 
     return (

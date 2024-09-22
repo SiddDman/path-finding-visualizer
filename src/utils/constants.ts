@@ -44,7 +44,7 @@ export const MAZES: MazeSelectType[] = [
 
 export const PATH_FINDING_ALGO: AlgoSelectType[] = [
     { name: "Dijkstra", value: "DIJIKSTRA" },
-    { name: "A*", value: "A_STAR" },
+    { name: "A_STAR", value: "A_STAR" },
     { name: "Breadth First Search", value: "BFS" },
     { name: "Depth First Search", value: "DFS" },
 ]

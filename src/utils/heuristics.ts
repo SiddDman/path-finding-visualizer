@@ -26,7 +26,7 @@ export const initFunctionCost = () => {
     const functionCost = []
     for (let i = 0; i < MAX_ROWS; i++) {
         const row = []
-        for (let j = 0; i < MAX_COLS; j++)
+        for (let j = 0; j < MAX_COLS; j++)
             row.push(Infinity)
         functionCost.push(row)
     }
