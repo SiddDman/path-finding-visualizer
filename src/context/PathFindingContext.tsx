@@ -16,7 +16,8 @@ interface PathFindingContextInterface {
 
 export const PathFindingContext = createContext<PathFindingContextInterface | undefined>(undefined);
 
-export const PathFindingProvider = ({ children }: { children: ReactNode }) => {
+
+export const PathFindingProvider = ({ children }: { children: React.ReactNode }) => {
     const [algo, setAlgo] = useState<AlgoType>('BFS');
     const [maze, setMaze] = useState<MazeType>("NONE")
     const [grid, setGrid] = useState<GridType>(createGrid(START_TILE_CONFIG, END_TILE_CONFIG))
