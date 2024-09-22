@@ -1,3 +1,4 @@
+import a_star from "../lib/algo/pathFinding/a_star";
 import bfs from "../lib/algo/pathFinding/bfs";
 import dfs from "../lib/algo/pathFinding/dfs";
 import dijkstra from "../lib/algo/pathFinding/dijkstra";
@@ -21,8 +22,8 @@ const runPathFindingAlgo = ({
             return dfs(grid, startTile, endTile);
         case "DIJIKSTRA":
             return dijkstra(grid, startTile, endTile);
-        // case "A_STAR":
-        //     return;
+        case "A_STAR":
+            return a_star(grid, startTile, endTile);
         default:
             return bfs(grid, startTile, endTile);
     }
