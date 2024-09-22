@@ -51,6 +51,7 @@ const a_star = (
     }
     const path = []
     let curr = grid[endTile.row][endTile.col]
+
     while (curr !== null) {
         curr.isPath = true
         path.unshift(curr)

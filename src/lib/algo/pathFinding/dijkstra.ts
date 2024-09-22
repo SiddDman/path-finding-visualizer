@@ -38,12 +38,13 @@ const dijkstra = (
     }
 
     const path = []
-    let curr = endTile
+    let curr = grid[endTile.row][endTile.col]
     while (curr !== null) {
         curr.isPath = true
         path.unshift(curr)
         curr = curr.parent!
     }
+
     return { traversedTiles, path }
 }
 
