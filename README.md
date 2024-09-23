@@ -83,6 +83,7 @@ Live Demo: [Pathfinding Visualizer](https://path-finding-wiz.vercel.app/)
 
 ## Future Improvements
 
+- Add a Set Start Tile and Set End Tile Button to set custom Start Tile and End Tile.
 - Add more algorithms (e.g., Greedy Best-First Search, Bi-directional Search).
 - Allow dynamic weighting for Dijkstra and A*.
 - Add support for weighted walls.
